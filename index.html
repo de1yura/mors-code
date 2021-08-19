@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Morse</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <input placeholder="write english here..." type="text" id="myInput">
+  <button onclick=toMorse() class="convert">convert</button>
+
+  <h3>English to Morse Translation:</h3>
+  <p id="morse_display"></p>
+  
+  <input placeholder="write morse here..." type="text" id="mInput">
+  <button onclick=toEng() id="mButton" >convert</button>
+
+  <h3>Morse to English Translation:</h3>
+  <p id="english_display"></p>
+
+  <script src="./app.js"></script>
+</body>
+</html>
