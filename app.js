@@ -55,20 +55,20 @@ const toMorse = () => {
   const greeting = input.value
   const greetingSplit = greeting.toLowerCase().split("");
   const greetingSlash = greetingSplit.map(a => a === " " ? "/" :a);
-  const greetingMorse = greetingSlash.map((letter) =>  Morse[letter]).join("&nbsp &nbsp");
+  const greetingMorse = greetingSlash.map((letter) =>  Morse[letter]).join(" ");
   morseDisplay.innerHTML= greetingMorse;
 }
 
 const toEng = () => {
   const morseInput = input.value;
-  const morseSplit = morseInput.split("   ");
+  const morseSplit = morseInput.split(" ");
   const morseString = morseSplit.map((m) => {
     m.toString()
     return Object.keys(Morse)[Object.values(Morse).indexOf(m)]
   })
 
 
-  const spaceAdder = morseString.map((m) => m.replace("/", "   "));
+  const spaceAdder = morseString.map((m) => m.replace("/", " "));
   const morseFinal = spaceAdder.join("");
 
   morseDisplay.innerHTML=morseFinal;

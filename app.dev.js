@@ -57,19 +57,19 @@ var toMorse = function toMorse() {
   });
   var greetingMorse = greetingSlash.map(function (letter) {
     return Morse[letter];
-  }).join("&nbsp &nbsp");
+  }).join(" ");
   morseDisplay.innerHTML = greetingMorse;
 };
 
 var toEng = function toEng() {
   var morseInput = input.value;
-  var morseSplit = morseInput.split("   ");
+  var morseSplit = morseInput.split(" ");
   var morseString = morseSplit.map(function (m) {
     m.toString();
     return Object.keys(Morse)[Object.values(Morse).indexOf(m)];
   });
   var spaceAdder = morseString.map(function (m) {
-    return m.replace("/", "   ");
+    return m.replace("/", " ");
   });
   var morseFinal = spaceAdder.join("");
   morseDisplay.innerHTML = morseFinal;
