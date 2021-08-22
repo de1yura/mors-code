@@ -1,9 +1,8 @@
 const button = document.getElementsByClassName('.convert');
 const input = document.getElementById('myInput');
 const morseDisplay = document.getElementById('morse_display');
-const mInput = document.getElementById('mInput');
 const mButton = document.getElementById('mButton');
-const englishDisplay = document.getElementById('english_display');
+
 
 
 const Morse = {
@@ -43,7 +42,11 @@ const Morse = {
   '8':'---..',
   '9':'----.',
   '0':'-----',
-  '/':'/'
+  '/':'/',
+  '.': '.-.-.-',
+  ',':'--..--',
+  '?': '..--..'
+  
 }
 const letters = Object.keys(Morse);
 const morse = Object.values(Morse);
@@ -52,23 +55,23 @@ const toMorse = () => {
   const greeting = input.value
   const greetingSplit = greeting.toLowerCase().split("");
   const greetingSlash = greetingSplit.map(a => a === " " ? "/" :a);
-  const greetingMorse = greetingSlash.map((letter) =>  Morse[letter]).join("     ");
+  const greetingMorse = greetingSlash.map((letter) =>  Morse[letter]).join("&nbsp &nbsp");
   morseDisplay.innerHTML= greetingMorse;
 }
 
 const toEng = () => {
-  const morseInput = mInput.value;
-  const morseSplit = morseInput.split(" ");
+  const morseInput = input.value;
+  const morseSplit = morseInput.split("   ");
   const morseString = morseSplit.map((m) => {
     m.toString()
     return Object.keys(Morse)[Object.values(Morse).indexOf(m)]
   })
 
 
-  const spaceAdder = morseString.map((m) => m.replace("/", " "));
+  const spaceAdder = morseString.map((m) => m.replace("/", "   "));
   const morseFinal = spaceAdder.join("");
 
-  englishDisplay.innerHTML=morseFinal;
+  morseDisplay.innerHTML=morseFinal;
 
 console.log(morseFinal);
 }

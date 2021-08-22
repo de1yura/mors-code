@@ -1,5 +1,88 @@
-body button {
-  background-color: pink;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: black;
+  color: #39FF14;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  height: 50vh;
+  width: 50vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.container .buttons {
+  display: flex;
+  width: 70%;
+  height: 5%;
+  justify-content: space-between;
+  position: relative;
+  top: 12%;
+}
+.container button {
+  background-color: #39FF14;
   border-style: none;
-  border-radius: 5px;
+  border-radius: 1px;
+  width: 48%;
+}
+.container button:hover {
+  background-color: #249e0f;
+  cursor: pointer;
+}
+.container input {
+  height: 10%;
+  width: 70%;
+  position: relative;
+  top: 10%;
+  text-align: center;
+}
+.container h5 {
+  position: relative;
+  top: 21%;
+}
+.container p {
+  border: green 1px solid;
+  width: 71%;
+  min-height: 20px;
+  position: relative;
+  top: 27%;
+  text-align: center;
+}
+
+.wrapper {
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
+
+.typing-demo {
+  width: 100%;
+  animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: monospace;
+  font-size: 2em;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
 }

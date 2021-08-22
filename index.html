@@ -8,17 +8,24 @@
 </head>
 <body>
 
-  <input placeholder="write english here..." type="text" id="myInput">
-  <button onclick=toMorse() class="convert">convert</button>
+  <div class="container">
 
-  <h3>English to Morse Translation:</h3>
-  <p id="morse_display"></p>
-  
-  <input placeholder="write morse here..." type="text" id="mInput">
-  <button onclick=toEng() id="mButton" >convert</button>
+    <div class="wrapper">
+      <div class="typing-demo">
+        Translate morse code...
+      </div>
+    </div>
 
-  <h3>Morse to English Translation:</h3>
-  <p id="english_display"></p>
+    <input placeholder="Input code here" type="text" id="myInput">
+
+    <div class="buttons">
+      <button onclick=toMorse() class="convert">To Morse</button>
+      <button onclick=toEng() id="mButton" >To English</button>
+    </div>
+    <h5>TRANSLATION:</h5>
+    <p id="morse_display"></p>
+
+  </div>
 
   <script src="./app.js"></script>
 </body>
